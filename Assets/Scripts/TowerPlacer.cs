@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TowerPlacer : MonoBehaviour {
-
+    public GameObject towerPrefab;
 	// Use this for initialization
 	void Start () {
 		
@@ -23,6 +23,11 @@ public class TowerPlacer : MonoBehaviour {
                 worldPosition = hit.point;
             }
             print(worldPosition);
+
+            GameObject aTower = new GameObject();
+
+            GameObject bTower = new GameObject();
+            Instantiate(towerPrefab, new Vector3(0, 0, 0), Quaternion.identity);
         }
     }
 }
