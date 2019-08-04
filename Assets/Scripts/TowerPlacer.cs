@@ -24,10 +24,7 @@ public class TowerPlacer : MonoBehaviour {
             }
             print(worldPosition);
 
-            GameObject aTower = new GameObject();
-
-            GameObject bTower = new GameObject();
-            Instantiate(towerPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            Instantiate(towerPrefab, worldPosition, Quaternion.identity);
         }
     }
 }
