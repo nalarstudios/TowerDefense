@@ -24,6 +24,7 @@ public class TowerPlacer : MonoBehaviour
         {
             worldPosition = hit.point;
         }
+        Vector3 yLock = new Vector3(worldPosition.x,0.3f,worldPosition.z);
         print(worldPosition);
         
         if (Input.GetButtonDown("Placer"))
@@ -31,7 +32,7 @@ public class TowerPlacer : MonoBehaviour
             GhostTowerPlacer ghostTowerPlacer = GetComponent<GhostTowerPlacer>();
             if (ghostTowerPlacer.isShowingGhostTower)
             {
-                Instantiate(towerPrefab, worldPosition, Quaternion.identity);
+                Instantiate(towerPrefab, yLock, Quaternion.identity);
                 ghostTowerPlacer.isShowingGhostTower = false;
             }
         }
