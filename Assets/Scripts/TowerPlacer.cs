@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GhostTowerPlacer))]
 public class TowerPlacer : MonoBehaviour
 {
-    public GameObject transparentTowerPrefab;
     public GameObject towerPrefab;
     // Use this for initialization
     void Start ()
@@ -25,15 +25,18 @@ public class TowerPlacer : MonoBehaviour
             worldPosition = hit.point;
         }
         print(worldPosition);
-
-        if (Input.GetButtonDown("SelectTest"))
+        
+        if (Input.GetButtonDown("Placer"))
         {
-            Instantiate(transparentTowerPrefab, worldPosition, Quaternion.identity);
+            GhostTowerPlacer ghostTowerPlacer = GetComponent<GhostTowerPlacer>();
+            if (ghostTowerPlacer.isShowingGhostTower)
+            {
+                Instantiate(towerPrefab, worldPosition, Quaternion.identity);
+                ghostTowerPlacer.isShowingGhostTower = false;
+            }
         }
-        else if (Input.GetButtonDown("Placer"))
-        {
-            Instantiate(towerPrefab, worldPosition, Quaternion.identity);
-        }
+        
+        
               
     }
 }
