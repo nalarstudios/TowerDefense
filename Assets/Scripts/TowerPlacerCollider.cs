@@ -4,24 +4,16 @@ using UnityEngine;
 
 public class TowerPlacerCollider : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider other)
     {
-        print("Collision detected with trigger object " + other.name);
+        TowerPlacer towerPlacer = other.GetComponent<TowerPlacer>();
+        towerPlacer.canPlaceTower = false;
     }
 
     void OnTriggerExit(Collider other)
     {
-        print(gameObject.name + " and trigger object " + other.name + " are no longer colliding");
+        TowerPlacer towerPlacer = other.GetComponent<TowerPlacer>();
+        towerPlacer.canPlaceTower = true;
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }

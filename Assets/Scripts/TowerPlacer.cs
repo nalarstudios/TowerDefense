@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(GhostTowerPlacer))]
 public class TowerPlacer : MonoBehaviour
 {
     public GameObject towerPrefab;
+    public bool canPlaceTower = true;
+
     // Use this for initialization
     void Start ()
     {
@@ -25,15 +26,12 @@ public class TowerPlacer : MonoBehaviour
             worldPosition = hit.point;
         }
         Vector3 yLock = new Vector3(worldPosition.x,0.3f,worldPosition.z);
-        print(worldPosition);
         
         if (Input.GetButtonDown("Placer"))
         {
-            GhostTowerPlacer ghostTowerPlacer = GetComponent<GhostTowerPlacer>();
-            if (ghostTowerPlacer.isShowingGhostTower)
+            if (canPlaceTower)
             {
                 Instantiate(towerPrefab, yLock, Quaternion.identity);
-                ghostTowerPlacer.isShowingGhostTower = false;
             }
         }
         

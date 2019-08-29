@@ -5,7 +5,7 @@ using UnityEngine;
 public class GhostTowerPlacer : MonoBehaviour
 {
     public GameObject transparentTowerPrefab;
-    public bool isShowingGhostTower = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +24,10 @@ public class GhostTowerPlacer : MonoBehaviour
         {
             worldPosition = hit.point;
         }
-        print(worldPosition);
 
         if (Input.GetButtonDown("SelectTest"))
         {
             Instantiate(transparentTowerPrefab, worldPosition, Quaternion.identity);
-            isShowingGhostTower = true;
         }
     }
 }
