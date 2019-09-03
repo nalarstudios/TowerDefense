@@ -38,6 +38,7 @@ public class TowerPlacer : MonoBehaviour
             {
                 Instantiate(towerPrefab, yLock, Quaternion.identity);
                 walletComponent.currency--;
+                Destroy(gameObject);
             }
         }
         
