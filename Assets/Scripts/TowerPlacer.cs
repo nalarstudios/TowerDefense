@@ -35,10 +35,10 @@ public class TowerPlacer : MonoBehaviour
         if (Input.GetButtonDown("Placer"))
         {
             Wallet walletComponent = wallet.GetComponent<Wallet>();
-            if (canPlaceTower && walletComponent.currenency >= 1)
+            if (canPlaceTower && walletComponent.currency >= 1)
             {
                 Instantiate(towerPrefab, yLock, Quaternion.identity);
-                walletComponent.currenency--;
+                walletComponent.currency--;
             }
         }
         
