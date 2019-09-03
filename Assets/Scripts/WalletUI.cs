@@ -14,7 +14,6 @@ public class WalletUI : MonoBehaviour
         {
             Debug.LogError("You forgot wallet you Dingus!");
         }
-        print(wallet);
     }
 
     // Update is called once per frame
