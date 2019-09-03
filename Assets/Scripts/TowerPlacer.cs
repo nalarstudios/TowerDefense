@@ -6,11 +6,16 @@ public class TowerPlacer : MonoBehaviour
 {
     public GameObject towerPrefab;
     public bool canPlaceTower = true;
-
+    public GameObject wallet;
     // Use this for initialization
     void Start ()
     {
-		
+        wallet = GameObject.FindWithTag("Wallet");
+        if (wallet == null)
+        {
+            Debug.LogError("You forgot wallet you Dingus!");
+        }
+        print(wallet);
 	}
 	
 	// Update is called once per frame
@@ -29,9 +34,11 @@ public class TowerPlacer : MonoBehaviour
         
         if (Input.GetButtonDown("Placer"))
         {
-            if (canPlaceTower)
+            Wallet walletComponent = wallet.GetComponent<Wallet>();
+            if (canPlaceTower && walletComponent.currenency >= 1)
             {
                 Instantiate(towerPrefab, yLock, Quaternion.identity);
+                walletComponent.currenency--;
             }
         }
         
