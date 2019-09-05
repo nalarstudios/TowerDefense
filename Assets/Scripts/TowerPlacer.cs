@@ -25,7 +25,7 @@ public class TowerPlacer : MonoBehaviour
         Ray ray = camera.ScreenPointToRay(screenSpaceMousePosition);
         RaycastHit hit;
         Vector3 worldPosition = new Vector3(0, 0, 0);
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << 8))
         {
             worldPosition = hit.point;
         }
