@@ -5,7 +5,7 @@ using UnityEngine;
 public class GhostTowerPlacer : MonoBehaviour
 {
     public GameObject transparentTowerPrefab;
-
+    private bool isPlacing = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +25,22 @@ public class GhostTowerPlacer : MonoBehaviour
             worldPosition = hit.point;
         }
 
-        if (Input.GetButtonDown("SelectTest"))
+        if (Input.GetButtonDown("SelectTest") && !isPlacing)
         {
             Instantiate(transparentTowerPrefab, worldPosition, Quaternion.identity);
+            isPlacing = true;
+        }
+    }
+
+    public void Toggle()
+    {
+        if (!isPlacing)
+        {
+            isPlacing = true;
+        }
+        else
+        {
+            isPlacing = false;
         }
     }
 }
