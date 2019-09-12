@@ -5,7 +5,7 @@ using UnityEngine;
 public class TowerPlacer : MonoBehaviour
 {
     public GameObject towerPrefab;
-    public bool canPlaceTower = true;
+    private bool canPlaceTower = true;
     public GameObject wallet;
     public GameObject ghostTowerPlacer;
     // Use this for initialization
@@ -52,5 +52,17 @@ public class TowerPlacer : MonoBehaviour
         
         
               
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        canPlaceTower = false;
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        canPlaceTower = false;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        canPlaceTower = true;
     }
 }
