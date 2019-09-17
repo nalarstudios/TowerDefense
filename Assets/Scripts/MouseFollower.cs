@@ -22,7 +22,7 @@ public class MouseFollower : MonoBehaviour
         {
             worldPosition = hit.point;
         }
-        Vector3 yLock = new Vector3(worldPosition.x,0.02f,worldPosition.z);
+        Vector3 yLock = new Vector3(worldPosition.x,0.3f,worldPosition.z);
         gameObject.transform.position = yLock;
     }
 }

@@ -56,6 +56,7 @@ public class TowerPlacer : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         canPlaceTower = false;
+        print(other.name + " Entered " + gameObject.name);
     }
     private void OnTriggerStay(Collider other)
     {
@@ -64,5 +65,6 @@ public class TowerPlacer : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         canPlaceTower = true;
+        print(other.name + " Left " + gameObject.name);
     }
 }

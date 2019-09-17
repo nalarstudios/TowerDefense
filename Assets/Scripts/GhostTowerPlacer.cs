@@ -27,7 +27,8 @@ public class GhostTowerPlacer : MonoBehaviour
 
         if (Input.GetButtonDown("SelectTest") && !isPlacing)
         {
-            Instantiate(transparentTowerPrefab, worldPosition, Quaternion.identity);
+            Vector3 yLock = new Vector3(worldPosition.x, 0.3f, worldPosition.z);
+            Instantiate(transparentTowerPrefab, yLock, Quaternion.identity);
             isPlacing = true;
         }
     }
