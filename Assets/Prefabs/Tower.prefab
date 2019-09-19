@@ -61,6 +61,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Unplaceable Cylinder Area
       objectReference: {fileID: 0}
+    - target: {fileID: 4157447512779512225, guid: 0da7683589c331542af7784d1fee952c,
+        type: 3}
+      propertyPath: m_TagString
+      value: UnplaceableArea
+      objectReference: {fileID: 0}
     - target: {fileID: 4512010406700526737, guid: 0da7683589c331542af7784d1fee952c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -114,6 +119,11 @@ PrefabInstance:
     - target: {fileID: 4512010406700526737, guid: 0da7683589c331542af7784d1fee952c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 595727669797290821, guid: 0da7683589c331542af7784d1fee952c,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

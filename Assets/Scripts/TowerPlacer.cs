@@ -8,6 +8,7 @@ public class TowerPlacer : MonoBehaviour
     private bool canPlaceTower = true;
     public GameObject wallet;
     public GameObject ghostTowerPlacer;
+    public GameObject[] rend;
     // Use this for initialization
     void Start ()
     {
@@ -20,6 +21,11 @@ public class TowerPlacer : MonoBehaviour
         if (ghostTowerPlacer == null)
         {
             Debug.LogError("You forgot the GhostTowerPlacer tag ya Dingus!");
+        }
+        rend = GameObject.FindGameObjectsWithTag("UnplaceableArea");
+        if (rend == null)
+        {
+            Debug.LogError("You can place anywhere. xD Pft, you need some unplaceable areas.");
         }
     }
 	
@@ -43,6 +49,10 @@ public class TowerPlacer : MonoBehaviour
             GhostTowerPlacer setGhostTower = ghostTowerPlacer.GetComponent<GhostTowerPlacer>();
             if (canPlaceTower && walletComponent.currency >= 1)
             {
+                foreach (GameObject renderer in rend)
+                {
+                    renderer.GetComponent<MeshRenderer>().enabled = false;
+                }
                 Instantiate(towerPrefab, yLock, Quaternion.identity);
                 walletComponent.currency--;
                 Destroy(gameObject);

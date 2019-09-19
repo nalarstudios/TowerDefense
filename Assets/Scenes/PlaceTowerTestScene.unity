@@ -465,6 +465,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Unplaceable Area (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6027533759245743366, guid: 8bd3a04697498134cbdac2c6124ba3e0,
+        type: 3}
+      propertyPath: m_TagString
+      value: UnplaceableArea
+      objectReference: {fileID: 0}
     - target: {fileID: 6027533759245743362, guid: 8bd3a04697498134cbdac2c6124ba3e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -534,6 +539,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2.54931
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027533759245743360, guid: 8bd3a04697498134cbdac2c6124ba3e0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bd3a04697498134cbdac2c6124ba3e0, type: 3}
@@ -711,6 +721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transparentTowerPrefab: {fileID: 6031372558400981062, guid: 344c6e3c2dffa344aa13cfb04ef0b211,
     type: 3}
+  rend: []
 --- !u!4 &1336846795
 Transform:
   m_ObjectHideFlags: 0
@@ -806,6 +817,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Unplaceable Area (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6027533759245743366, guid: 8bd3a04697498134cbdac2c6124ba3e0,
+        type: 3}
+      propertyPath: m_TagString
+      value: UnplaceableArea
+      objectReference: {fileID: 0}
     - target: {fileID: 6027533759245743362, guid: 8bd3a04697498134cbdac2c6124ba3e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -889,6 +905,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Unplaceable Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027533759245743366, guid: 8bd3a04697498134cbdac2c6124ba3e0,
+        type: 3}
+      propertyPath: m_TagString
+      value: UnplaceableArea
       objectReference: {fileID: 0}
     - target: {fileID: 6027533759245743362, guid: 8bd3a04697498134cbdac2c6124ba3e0,
         type: 3}

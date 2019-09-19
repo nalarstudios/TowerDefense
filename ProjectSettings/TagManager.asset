@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wallet
   - GhostTowerPlacer
+  - UnplaceableArea
   layers:
   - Default
   - TransparentFX
