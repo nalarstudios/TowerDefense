@@ -59,7 +59,16 @@ public class TowerPlacer : MonoBehaviour
                 setGhostTower.Toggle();
             }
         }
-        
+        else if (Input.GetButtonDown("Cancel"))
+        {
+            foreach (GameObject renderer in rend)
+            {
+                renderer.GetComponent<MeshRenderer>().enabled = false;
+            }
+            Destroy(gameObject);
+            GhostTowerPlacer setGhostTower = ghostTowerPlacer.GetComponent<GhostTowerPlacer>();
+            setGhostTower.Toggle();
+        }
         
               
     }
