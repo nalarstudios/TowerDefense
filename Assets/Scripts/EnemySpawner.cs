@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private GameObject enemySpawner;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Vector3 yLock = new Vector3(gameObject.transform.position.x, 0.3f, gameObject.transform.position.z);
         Instantiate(enemySpawner, yLock, Quaternion.identity);
